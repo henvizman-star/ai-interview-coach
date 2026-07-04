@@ -1,0 +1,162 @@
+.PageNotFound {
+    min-height: calc(100vh - 172px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notFoundPanel {
+    width: min(840px, 100%);
+    padding: 52px;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(135deg, rgba(103, 232, 249, 0.13), rgba(34, 197, 94, 0.07)),
+        rgba(255, 255, 255, 0.055);
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 8px;
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.34);
+    backdrop-filter: blur(18px);
+}
+
+.notFoundPanel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: linear-gradient(90deg, black, transparent 75%);
+}
+
+.notFoundPanel > * {
+    position: relative;
+    z-index: 1;
+}
+
+.statusLine {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+
+    color: #67e8f9;
+    font-size: 13px;
+    font-weight: 850;
+    text-transform: uppercase;
+    letter-spacing: 0;
+}
+
+.statusLine span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+
+    background: #22c55e;
+    box-shadow: 0 0 22px rgba(34, 197, 94, 0.8);
+}
+
+.notFoundPanel h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 132px;
+    line-height: 0.9;
+    font-weight: 900;
+    letter-spacing: 0;
+    text-shadow: 0 22px 60px rgba(103, 232, 249, 0.22);
+}
+
+.notFoundPanel h3 {
+    margin: 20px 0 0;
+    color: #ffffff;
+    font-size: 32px;
+    letter-spacing: 0;
+}
+
+.notFoundPanel p {
+    max-width: 620px;
+    margin: 16px 0 28px;
+    color: #cbd5e1;
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+.notFoundPanel a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 24px;
+
+    background: linear-gradient(135deg, #67e8f9, #22c55e);
+    border-radius: 8px;
+    color: #031018;
+    font-weight: 850;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.notFoundPanel a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(34, 197, 94, 0.22);
+}
+
+.scanGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 34px;
+}
+
+.scanGrid div {
+    padding: 18px;
+    background: rgba(3, 7, 18, 0.42);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.scanGrid strong,
+.scanGrid span {
+    display: block;
+}
+
+.scanGrid strong {
+    margin-bottom: 8px;
+    color: #9fb3c8;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0;
+}
+
+.scanGrid span {
+    color: #ffffff;
+    font-weight: 750;
+}
+
+@media (max-width: 760px) {
+    .PageNotFound {
+        min-height: auto;
+        align-items: stretch;
+    }
+
+    .notFoundPanel {
+        padding: 34px;
+    }
+
+    .notFoundPanel h2 {
+        font-size: 86px;
+    }
+
+    .notFoundPanel h3 {
+        font-size: 26px;
+    }
+
+    .scanGrid {
+        grid-template-columns: 1fr;
+    }
+}

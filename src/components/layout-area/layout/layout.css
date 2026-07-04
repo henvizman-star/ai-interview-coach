@@ -1,0 +1,70 @@
+.Layout {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: 88px 1fr;
+    grid-template-areas:
+        "nav header"
+        "nav main";
+}
+
+/* ---------- Navigation ---------- */
+
+.Layout > nav {
+    grid-area: nav;
+
+    background: rgba(4, 8, 18, 0.78);
+    backdrop-filter: blur(22px);
+
+    border-right: 1px solid rgba(255,255,255,0.1);
+
+    box-shadow: 18px 0 50px rgba(0, 0, 0, 0.22);
+}
+
+/* ---------- Header ---------- */
+
+.Layout > header {
+    grid-area: header;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 42px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.09);
+}
+
+/* ---------- Main ---------- */
+
+.Layout > main {
+    grid-area: main;
+
+    padding: 42px;
+    overflow-y: auto;
+}
+
+@media (max-width: 760px) {
+    .Layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr;
+        grid-template-areas:
+            "header"
+            "nav"
+            "main";
+    }
+
+    .Layout > nav {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        box-shadow: none;
+    }
+
+    .Layout > header,
+    .Layout > main {
+        padding: 24px;
+    }
+}

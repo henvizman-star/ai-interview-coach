@@ -1,0 +1,84 @@
+.QnaCard {
+    margin-bottom: 18px;
+
+    border-radius: 8px;
+
+    background: linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    backdrop-filter: blur(16px);
+
+    overflow: hidden;
+
+    transition: .25s;
+}
+
+.QnaCard:hover {
+    border-color: rgba(103, 232, 249, .45);
+
+    box-shadow:
+        0 18px 44px rgba(0,0,0,.28);
+}
+
+/* ---------- Question ---------- */
+
+.question {
+    padding: 22px 28px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    cursor: pointer;
+
+    font-size: 17px;
+    font-weight: 600;
+    color: white;
+}
+
+.question:hover {
+    background: rgba(255,255,255,.03);
+}
+
+/* ---------- Arrow ---------- */
+
+.arrow {
+    font-size: 28px;
+    color: #67e8f9;
+    transition: .2s;
+}
+
+.open .arrow {
+    transform: rotate(180deg);
+}
+
+/* ---------- Answer ---------- */
+
+.answer {
+    padding: 0 28px 24px;
+
+    color: #d5e2ee;
+
+    line-height: 1.7;
+
+    font-size: 16px;
+
+    border-top: 1px solid rgba(255,255,255,.09);
+
+    animation: fade .25s ease;
+}
+
+/* ---------- Animation ---------- */
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

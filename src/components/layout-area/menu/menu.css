@@ -1,0 +1,90 @@
+.Menu {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    padding: 34px 18px;
+}
+
+/* ---------- Logo ---------- */
+
+.Menu h1 {
+    margin: 0 0 45px 0;
+
+    text-align: center;
+
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* ---------- Divider ---------- */
+
+.Menu span {
+    display: none;
+}
+
+/* ---------- Links ---------- */
+
+.Menu a {
+    display: block;
+
+    width: 100%;
+
+    padding: 15px 18px;
+    margin-bottom: 10px;
+
+    border: 1px solid transparent;
+    border-radius: 10px;
+
+    text-align: left;
+    text-decoration: none;
+
+    color: #cbd5e1;
+    font-size: 16px;
+    font-weight: 650;
+
+    transition: all .25s ease;
+}
+
+/* ---------- Hover ---------- */
+
+.Menu a:hover {
+    background: rgba(255,255,255,.07);
+    border-color: rgba(255,255,255,.1);
+    color: white;
+    transform: translateX(4px);
+}
+
+/* ---------- Active ---------- */
+
+.Menu a.active {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.22), rgba(34, 197, 94, 0.14));
+    border-color: rgba(125, 211, 252, 0.42);
+    color: white;
+
+    font-weight: 750;
+
+    box-shadow: 0 14px 34px rgba(8, 47, 73, 0.34);
+}
+
+@media (max-width: 760px) {
+    .Menu {
+        height: auto;
+        flex-direction: row;
+        gap: 10px;
+        padding: 14px 24px;
+    }
+
+    .Menu a {
+        margin: 0;
+        text-align: center;
+    }
+
+    .Menu a:hover {
+        transform: translateY(-1px);
+    }
+}
